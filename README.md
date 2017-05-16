@@ -6,6 +6,6 @@ To run:
 `python run.py`
 
 To add job to scheduler:
-`python
-execfile('scheduler.py')
-scheduler.start()`
+`python`
+`execfile('scheduler.py')`
+`scheduler.start()`
