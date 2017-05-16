@@ -1,6 +1,13 @@
 import scraper
 
-from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.blocking import BlockingScheduler
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(scraper.Scraper, 'interval', minutes=60)
+sched = BlockingScheduler()
+
+def job():
+  print('This scraper is run every 10 minutes.')
+  scraper.Scraper()
+
+sched.add_job(job, 'interval', minutes=10)
+
+sched.start()
