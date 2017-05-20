@@ -4,7 +4,6 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 
 def job():
-  print('This scraper is run every hour on the dot.')
   scraper.Scraper()
 
 sched = BlockingScheduler()

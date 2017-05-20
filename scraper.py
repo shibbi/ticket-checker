@@ -1,4 +1,5 @@
 import re, urlparse
+from datetime import datetime
 
 from selenium import webdriver
 from bs4 import BeautifulSoup
@@ -23,8 +24,8 @@ class Scraper(object):
     last_button = None
     for last_button in buttons:pass
     if last_button:
-      print last_button.getText()
+      print datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + last_button.getText()
     else:
-      print buttons
+      print "no tickets found"
 
     self.driver.quit()
