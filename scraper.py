@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 class Scraper(object):
   def __init__(self):
-    link = 'https://www1.ticketmaster.com/kcon-2017-ny-presented-by-toyota-newark-new-jersey/event/020052A2A7C972E2'
+    link = 'https://www1.ticketmaster.com/2018-monsta-x-us-tour-sugar-land-texas-07-29-2018/event/3A0054496F601C07'
 
     # initialize phantomJS driver
     self.driver = webdriver.PhantomJS()
@@ -24,7 +24,7 @@ class Scraper(object):
     last_button = None
     for last_button in buttons:pass
     if last_button:
-      print datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + last_button.getText()
+      print "highest price at " + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + last_button.getText()
     else:
       print "no tickets found"
 
