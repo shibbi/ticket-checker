@@ -11,7 +11,7 @@ class Scraper(object):
 
     # parse the page and find all buttons with class
     soup = BeautifulSoup(self.driver.page_source, "html.parser")
-    buttons = soup.find_all('button', { 'class': 'rc-slider__label-button' })
+    buttons = soup.find_all("button", { "class": "rc-slider__label-button" })
 
     # look for the last button and print the text
     # if not found print all the buttons
@@ -19,7 +19,7 @@ class Scraper(object):
     for last_button in buttons:pass
     print event + ": "
     if last_button:
-      print "highest price at " + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + last_button.getText()
+      print "highest price at " + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": " + last_button.getText()
     else:
       print "no tickets found"
 
@@ -27,10 +27,10 @@ class Scraper(object):
     # initialize phantomJS driver
     self.driver = webdriver.PhantomJS()
     self.driver.set_window_size(1120, 550)
-    
+
     event = ""
-    link = ''
+    link = ""
     self.find(event, link)
 
     self.driver.quit()
-  
+
