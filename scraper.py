@@ -28,8 +28,8 @@ class Scraper(object):
     self.driver = webdriver.PhantomJS()
     self.driver.set_window_size(1120, 550)
 
-    event = ""
-    link = ""
+    event = "2018 KCON NY"
+    link = "https://www1.ticketmaster.com/kcon-2-day-package-newark-new-jersey/event/020054A989721DFE"
     self.find(event, link)
 
     self.driver.quit()
